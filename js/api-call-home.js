@@ -1,7 +1,12 @@
 const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page=20&consumer_key=ck_946c851fd99cd6bc49a12feed747722bb1ab2c69&consumer_secret=cs_ed72963b1ad013f799e0b23e53729cb1239429d3`;
-data = [];
+// data = [];
 const getData = async (url) => {
   try {
+    const containerDiv = document.querySelector(".container");
+    const loader = document.getElementById("loader");
+    containerDiv.style.display = "none";
+    loader.style.display = "block";
+
     const response = await fetch(url);
     const result = await response.json();
 
@@ -14,16 +19,15 @@ const getData = async (url) => {
 getData(url);
 
 function fillData(response) {
-  data = response;
+  // data = response;
 
   let carousel = "";
 
-  const carouselContent = document.querySelector(".carousel-content");
+  const containerDiv = document.querySelector(".container");
   const loader = document.getElementById("loader");
-  loader.style.display = "block";
+  const carouselContent = document.querySelector(".carousel-content");
 
-
-  data.forEach((elem, index) => {
+  response.forEach((elem, index) => {
     if (index >= 5 && index < 10) {
       let text = elem.name;
       carousel += `<div class="slide">
@@ -38,12 +42,13 @@ function fillData(response) {
   </div>
  `;
     }
-
   });
 
-loader.style.display = "none";
+  loader.style.display = "none";
+  containerDiv.style.display = "block";
 
   carouselContent.innerHTML = carousel;
+
   carouselMove();
 
   let html = "";

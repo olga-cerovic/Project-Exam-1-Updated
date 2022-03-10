@@ -5,9 +5,9 @@
   text-align: center;
   margin: 50px 50px 50px 50px;
 }
-.extra-space {
+/* .extra-space {
   padding-top: 10%;
-}
+} */
 
 .middle-section img {
   text-align: center;
@@ -89,9 +89,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .middle-section .extra-space {
+  /* .middle-section .extra-space {
     padding-top: 0;
-  }
+  } */
   .text-area h1 {
     font-size: 0.9em !important;
   }
@@ -100,9 +100,9 @@
     max-width: 450px !important;
   }
 
-  .middle-section .text-area {
+  /* .middle-section .text-area {
     margin-top: 20%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 700px) {
