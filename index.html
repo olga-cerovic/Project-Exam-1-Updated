@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/subscribe.css" />
     <link rel="stylesheet" href="./styles/hamburger-menu.css" />
+    <link rel="stylesheet" href="./styles/loading-indicator.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+
     <title>Coffee Nomad | Home</title>
     <!-- Hotjar Tracking Code for https://elastic-pasteur-9963a6.netlify.app/ -->
     <script>
@@ -70,62 +73,67 @@
       <hr />
     </header>
     <main>
-      <div class="latests-post-carousel"></div>
-      <div class="container">
-        <div class="carousel">
-          <div class="slider-nav nav-left">
-            <div class="carousel-arrow-icon-left">&#8592;</div>
-          </div>
-          <div class="carousel-content"></div>
-          <div class="slider-nav nav-right">
-            <div class="carousel-arrow-icon-right">&#8594;</div>
+      <!-- <div class="latests-post-carousel"></div> -->
+      <div class="main-container">
+        <div class="container">
+          <div class="carousel">
+            <div class="slider-nav nav-left">
+              <div class="carousel-arrow-icon-left">&#8592;</div>
+            </div>
+            <div class="carousel-content"></div>
+            <div class="slider-nav nav-right">
+              <div class="carousel-arrow-icon-right">&#8594;</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="middle-section">
-        <div class="text-area">
-          <h1>Discover the world of coffee</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            fringilla nunc eget interdum porttitor. Maecenas vulputate finibus
-            dui quis dapibus. Sed ante erat, placerat vel augue et, egestas
-            interdum ligula. Phasellus quis libero tristique, venenatis purus
-            tincidunt, molestie nunc. Nam massa elit, tempor ut porta sit amet,
-            pulvinar vel ipsum. Integer vehicula felis vitae velit semper, at
-            pellentesque orci luctus. Morbi elit velit, pharetra eget porttitor
-            sed, blandit a magna. Duis tortor dui, tincidunt non interdum ut,
-            feugiat eu eros. Quisque ornare vitae velit tempor blandit.
-            Vestibulum sit amet felis nec ex posuere ullamcorper condimentum
-            quis felis. In suscipit velit in egestas luctus. Donec at dictum
-            nisl, id semper odio. Nulla convallis, odio vel iaculis ultrices,
-            sapien dui maximus arcu, nec pulvinar ipsum diam sed metus. Ut
-            rutrum magna egestas turpis viverra maximus. Ut vitae ligula ex.
-            Vestibulum imperdiet nisl sapien, tincidunt consequat eros imperdiet
-            in. Nunc justo est, mattis sed elit sed, volutpat mattis dolor.
-            Pellentesque euismod volutpat est vel consectetur. Sed tempor
-            tincidunt purus, quis semper ante malesuada eget. Duis bibendum
-            porta accumsan. Suspendisse a vestibulum urna, vitae maximus enim.
-            Maecenas posuere, arcu sit amet consequat interdum, libero sem
-            venenatis eros, sit amet vulputate massa ligula vel est. Ut lobortis
-            neque quis neque accumsan, quis ullamcorper nisl dictum. Sed a risus
-            nec erat porttitor molestie id ut libero. Fusce eu molestie ligula.
-            Nullam sed sodales felis. Nunc a mauris ut lectus rhoncus eleifend.
-            Quisque venenatis lobortis tortor et venenatis. Nulla egestas tortor
-            nec tristique hendrerit. Pellentesque rutrum quam faucibus consequat
-            imperdiet. Sed id aliquet dolor. Cras tristique, est ut eleifend
-            lacinia, nisi justo hendrerit urna, eu pretium ligula nunc id ante.
-            Cras aliquet urna sed nisl vehicula, sed suscipit lectus volutpat.
-            Sed quis elementum odio. Nulla facilisi. Vestibulum in metus non est
-            fringilla cursus. Quisque augue urna, euismod ut sagittis non,
-            mollis a dolor. Integer semper eu ex cursus euismod. Vestibulum
-            mollis risus ut pretium elementum. Nullam quis odio eget metus
-            iaculis euismod in quis libero. Pellentesque ac nisi turpis. In at
-            nulla non urna dictum cursus. Nam eget nunc accumsan, bibendum enim
-            eget, facilisis enim. Donec sit amet porttitor nibh.
-          </p>
+        <div class="loader" id="loader"></div>
+        <div class="middle-section">
+          <div class="text-area">
+            <h1>Discover the world of coffee</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              fringilla nunc eget interdum porttitor. Maecenas vulputate finibus
+              dui quis dapibus. Sed ante erat, placerat vel augue et, egestas
+              interdum ligula. Phasellus quis libero tristique, venenatis purus
+              tincidunt, molestie nunc. Nam massa elit, tempor ut porta sit
+              amet, pulvinar vel ipsum. Integer vehicula felis vitae velit
+              semper, at pellentesque orci luctus. Morbi elit velit, pharetra
+              eget porttitor sed, blandit a magna. Duis tortor dui, tincidunt
+              non interdum ut, feugiat eu eros. Quisque ornare vitae velit
+              tempor blandit. Vestibulum sit amet felis nec ex posuere
+              ullamcorper condimentum quis felis. In suscipit velit in egestas
+              luctus. Donec at dictum nisl, id semper odio. Nulla convallis,
+              odio vel iaculis ultrices, sapien dui maximus arcu, nec pulvinar
+              ipsum diam sed metus. Ut rutrum magna egestas turpis viverra
+              maximus. Ut vitae ligula ex. Vestibulum imperdiet nisl sapien,
+              tincidunt consequat eros imperdiet in. Nunc justo est, mattis sed
+              elit sed, volutpat mattis dolor. Pellentesque euismod volutpat est
+              vel consectetur. Sed tempor tincidunt purus, quis semper ante
+              malesuada eget. Duis bibendum porta accumsan. Suspendisse a
+              vestibulum urna, vitae maximus enim. Maecenas posuere, arcu sit
+              amet consequat interdum, libero sem venenatis eros, sit amet
+              vulputate massa ligula vel est. Ut lobortis neque quis neque
+              accumsan, quis ullamcorper nisl dictum. Sed a risus nec erat
+              porttitor molestie id ut libero. Fusce eu molestie ligula. Nullam
+              sed sodales felis. Nunc a mauris ut lectus rhoncus eleifend.
+              Quisque venenatis lobortis tortor et venenatis. Nulla egestas
+              tortor nec tristique hendrerit. Pellentesque rutrum quam faucibus
+              consequat imperdiet. Sed id aliquet dolor. Cras tristique, est ut
+              eleifend lacinia, nisi justo hendrerit urna, eu pretium ligula
+              nunc id ante. Cras aliquet urna sed nisl vehicula, sed suscipit
+              lectus volutpat. Sed quis elementum odio. Nulla facilisi.
+              Vestibulum in metus non est fringilla cursus. Quisque augue urna,
+              euismod ut sagittis non, mollis a dolor. Integer semper eu ex
+              cursus euismod. Vestibulum mollis risus ut pretium elementum.
+              Nullam quis odio eget metus iaculis euismod in quis libero.
+              Pellentesque ac nisi turpis. In at nulla non urna dictum cursus.
+              Nam eget nunc accumsan, bibendum enim eget, facilisis enim. Donec
+              sit amet porttitor nibh.
+            </p>
+          </div>
         </div>
+        <div class="subscribe-section"></div>
       </div>
-      <div class="subscribe-section"></div>
     </main>
     <footer>
       <div class="footer-row">

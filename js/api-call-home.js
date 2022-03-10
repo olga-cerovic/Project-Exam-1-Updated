@@ -19,6 +19,9 @@ function fillData(response) {
   let carousel = "";
 
   const carouselContent = document.querySelector(".carousel-content");
+  const loader = document.getElementById("loader");
+  loader.style.display = "block";
+
 
   data.forEach((elem, index) => {
     if (index >= 5 && index < 10) {
@@ -35,7 +38,10 @@ function fillData(response) {
   </div>
  `;
     }
+
   });
+
+loader.style.display = "none";
 
   carouselContent.innerHTML = carousel;
   carouselMove();

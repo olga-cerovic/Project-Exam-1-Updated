@@ -6,10 +6,10 @@
   box-sizing: border-box;
 }
 
-.latests-post-carousel {
-  margin-top: 9%;
+/* .latests-post-carousel {
+  margin-top: 200px;
   text-align: center;
-}
+} */
 
 .carousel {
   position: relative;
