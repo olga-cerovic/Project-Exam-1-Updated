@@ -1,9 +1,13 @@
 const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page=20&consumer_key=ck_946c851fd99cd6bc49a12feed747722bb1ab2c69&consumer_secret=cs_ed72963b1ad013f799e0b23e53729cb1239429d3`;
-data = [];
+// data = [];
 
 numPost = 10;
 const getData = async (url) => {
   try {
+    // const containerDiv = document.querySelector(".container");
+    // const loader = document.getElementById("loader");
+    // containerDiv.style.display = "none";
+    // loader.style.display = "block";
     const response = await fetch(url);
     const result = await response.json();
     fillData(result);
@@ -15,12 +19,12 @@ const getData = async (url) => {
 getData(url);
 
 function fillData(response) {
-  data = response;
+  // data = response;
 
   let html = "";
   let showcase = document.querySelector(".subscribe-section");
   html += `<img
-   src="${data[1].images[0].src}"
+   src="${response[1].images[0].src}"
    alt="Camping coffee equipment by lake"
   />
   <div id="sub2">
@@ -53,16 +57,16 @@ var postContainer = document.querySelector(".post-list");
 const showMore = document.querySelector("#show-more");
 showMore.addEventListener("click", function () {
   numPost += 2;
-  insertPosts(data, numPost);
+  insertPosts(response, numPost);
 });
 
-function insertPosts(data, num) {
+function insertPosts(response, num) {
   let html = "";
 
-  data.forEach((element, index) => {
+  response.forEach((element, index) => {
     if (index >= 5 && index < 5 + num) {
       html += ` <div class="post-details">
-    <a href="https://elastic-pasteur-9963a6.netlify.app/post-specific.html?id=${index}"> 
+    <a href="https://upbeat-darwin-d2da9a.netlify.app/post-specific.html?id=${index}"> 
     <img
       src="${element.images[0].src}"
       alt="${element.name}"
@@ -76,4 +80,9 @@ function insertPosts(data, num) {
   });
 
   postContainer.innerHTML = html;
+
+  // const containerDiv = document.getElementById("container");
+  // const loader = document.getElementById("loader");
+  // containerDiv.style.display = "block";
+  // loader.style.display = "none";
 }

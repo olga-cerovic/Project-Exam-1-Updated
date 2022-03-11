@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-    name="description"
-    content="Coffee Nomad will take you through the best coffee places in the world. Take your cup of coffee and enjoy coffee yourney with us."
-  />
+      name="description"
+      content="Coffee Nomad will take you through the best coffee places in the world. Take your cup of coffee and enjoy coffee yourney with us."
+    />
     <link rel="stylesheet" href="../styles/navigation.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/subscribe.css" />
     <link rel="stylesheet" href="../styles/fonts.css" />
     <link rel="stylesheet" href="../styles/hamburger-menu.css" />
     <link rel="stylesheet" href="../styles/posts.css" />
+    <link rel="stylesheet" href="./styles/loading-indicator.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
     <title>Coffee Nomad | Posts</title>
     <!-- Hotjar Tracking Code for https://elastic-pasteur-9963a6.netlify.app/ -->
     <script>
@@ -55,7 +57,7 @@
           <li class="list-item"><a href="./index.html">Home</a></li>
           <li class="list-item"><a href="./about.html">About</a></li>
           <li class="list-item active"><a href="./posts.html">Posts</a></li>
-          <li class="list-item "><a href="./contact.html">Contact</a></li>
+          <li class="list-item"><a href="./contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="social-media nav-social">
@@ -67,19 +69,24 @@
       <hr />
     </header>
     <main>
-      <div class="posts-page-main-content">
-        <h1>Latest posts</h1>
-        <div class="post-list"></div>
-      </div>
-      <div id="showButton">
-        <button id="show-more" class="formButton">Show More</button>
-      </div>
-      <div class="subscribe-section">
-        <div id="sub2">
-          <h2>Subscribe here</h2>
-          <label> Email </label>
-          <input id="inputField" type="text" />
-          <button class="formButton">Subscribe</button>
+      <div class="main-container">
+        <div class="loader" id="loader"></div>
+        <div id="container">
+          <div class="posts-page-main-content">
+            <h1>Latest posts</h1>
+            <div class="post-list"></div>
+          </div>
+          <div id="showButton">
+            <button id="show-more" class="formButton">Show More</button>
+          </div>
+          <div class="subscribe-section">
+            <div id="sub2">
+              <h2>Subscribe here</h2>
+              <label> Email </label>
+              <input id="inputField" type="text" />
+              <button class="formButton">Subscribe</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>

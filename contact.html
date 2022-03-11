@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-    name="description"
-    content="We in Coffee Nomad are more then glad to hear from you! Please send us all your suggestions, praise and critique."
-  />
+      name="description"
+      content="We in Coffee Nomad are more then glad to hear from you! Please send us all your suggestions, praise and critique."
+    />
     <link rel="stylesheet" href="./styles/navigation.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/middle-section.css" />
@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/hamburger-menu.css" />
     <link rel="stylesheet" href="./styles/subscribe.css" />
-
+    <link rel="stylesheet" href="./styles/loading-indicator.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
     <title>Coffee Nomad | Contact</title>
     <!-- Hotjar Tracking Code for https://elastic-pasteur-9963a6.netlify.app/ -->
     <script>
@@ -69,61 +70,66 @@
       <hr />
     </header>
     <main>
-      <div class="middle-section extra-space">
-        <div class="contact-form-container">
-          <p id="formError"></p>
-          <form id="contactForm">
-            <div>
-              <label>
-                Full Name (required)
-                <input name="fullName" id="fullName" />
-              </label>
-              <div class="field-error" id="fullNameError">
-                Your name must be a least 5 characters long.
-              </div>
+      <div class="main-container">
+        <div class="loader" id="loader"></div>
+        <div id="container">
+          <div class="middle-section extra-space">
+            <div class="contact-form-container">
+              <p id="formError"></p>
+              <form id="contactForm">
+                <div>
+                  <label>
+                    Full Name (required)
+                    <input name="fullName" id="fullName" />
+                  </label>
+                  <div class="field-error" id="fullNameError">
+                    Your name must be a least 5 characters long.
+                  </div>
+                </div>
+                <div>
+                  <label>
+                    Email (required)
+                    <input name="email" id="email" />
+                  </label>
+                  <div class="field-error" id="emailError">
+                    Please enter a valid email address. Example email@email.com
+                  </div>
+                </div>
+                <div>
+                  <label>
+                    Subject (required)
+                    <input name="subject" id="subject" />
+                  </label>
+                  <div class="field-error" id="subjectError">
+                    Your subject must be at least 15 characters long.
+                  </div>
+                </div>
+                <div>
+                  <label> Message (required)</label>
+                  <textarea name="message" id="message"></textarea>
+                  <div class="field-error" id="messageError">
+                    Your message must be at least 25 characters long.
+                  </div>
+                </div>
+                <button
+                  class="formButton"
+                  type="submit"
+                  id="formButton"
+                  onclick="validateForm();"
+                >
+                  Send message
+                </button>
+              </form>
             </div>
-            <div>
-              <label>
-                Email (required)
-                <input name="email" id="email" />
-              </label>
-              <div class="field-error" id="emailError">
-                Please enter a valid email address. Example email@email.com
-              </div>
+          </div>
+          <div class="subscribe-section">
+            <div id="sub2">
+              <h2>Subscribe here</h2>
+              <label> Email </label>
+              <input id="inputField" type="text" />
+              <button class="formButton">Subscribe</button>
             </div>
-            <div>
-              <label>
-                Subject (required)
-                <input name="subject" id="subject" />
-              </label>
-              <div class="field-error" id="subjectError">
-                Your subject must be at least 15 characters long.
-              </div>
-            </div>
-            <div>
-              <label> Message (required)</label>
-              <textarea name="message" id="message"></textarea>
-              <div class="field-error" id="messageError">
-                Your message must be at least 25 characters long.
-              </div>
-            </div>
-            <button
-              class="formButton"
-              type="submit"
-              id="formButton"
-              onclick="validateForm();"
-            >
-              Send message
-            </button>
-          </form>
-        </div>
-      </div>
-      <div class="subscribe-section">
-        <div id="sub2">
-          <h2>Subscribe here</h2>
-          <label> Email </label>
-          <input id="inputField" type="text" />
-          <button class="formButton">Subscribe</button>
+          </div>
         </div>
       </div>
     </main>
