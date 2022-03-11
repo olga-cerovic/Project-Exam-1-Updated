@@ -66,7 +66,7 @@ function insertPosts(response, num) {
   response.forEach((element, index) => {
     if (index >= 5 && index < 5 + num) {
       html += ` <div class="post-details">
-    <a href="https://upbeat-darwin-d2da9a.netlify.app/post-specific.html?id=${index}"> 
+    <a href="http://127.0.0.1:5501//post-specific.html?id=${index}"> 
     <img
       src="${element.images[0].src}"
       alt="${element.name}"

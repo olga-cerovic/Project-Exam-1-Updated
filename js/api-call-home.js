@@ -32,7 +32,7 @@ function fillData(response) {
       let text = elem.name;
       carousel += `<div class="slide">
     <div>
-    <a href="https://upbeat-darwin-d2da9a.netlify.app/post-specific.html?id=${index}">
+    <a href="127.0.0.1:5501/post-specific.html?id=${index}">
       <img src="${elem.images[0].src}" alt="" />
       <p>
         ${text}

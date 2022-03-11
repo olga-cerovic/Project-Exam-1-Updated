@@ -1,10 +1,10 @@
 const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page=20&consumer_key=ck_946c851fd99cd6bc49a12feed747722bb1ab2c69&consumer_secret=cs_ed72963b1ad013f799e0b23e53729cb1239429d3`;
 const getData = async (url) => {
   try {
-    const containerDiv = document.getElementById("container");
-    const loader = document.getElementById("loader");
-    containerDiv.style.display = "none";
-    loader.style.display = "block";
+    // const containerDiv = document.getElementById("container");
+    // const loader = document.getElementById("loader");
+    // containerDiv.style.display = "none";
+    // loader.style.display = "block";
     const response = await fetch(url);
     const result = await response.json();
 
@@ -21,7 +21,7 @@ function fillData(response) {
   let html = "";
   let showcase = document.querySelector(".subscribe-section");
   html += `<img
-   src="${data[1].images[0].src}"
+   src="${response[1].images[0].src}"
    alt="Camping coffee equipment by lake"
   />
   <div id="sub2">
@@ -45,10 +45,10 @@ function fillData(response) {
     }, 3000);
   });
 
-  const containerDiv = document.getElementById("container");
-  const loader = document.getElementById("loader");
-  containerDiv.style.display = "none";
-  loader.style.display = "block";
+  // const containerDiv = document.getElementById("container");
+  // const loader = document.getElementById("loader");
+  // containerDiv.style.display = "none";
+  // loader.style.display = "block";
 }
 modalImg = document.querySelector("#modal img");
 
