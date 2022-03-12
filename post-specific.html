@@ -79,6 +79,15 @@
             <span class="close">&times;</span>
             <img src="" />
           </div>
+          <div class="comment-section">
+            <form onSubmit="postComment">
+              <div>
+                <label htmlFor="comment">Comment*</label>
+                <textarea id="comment" required></textarea>
+              </div>
+              <input type="submit" value="Post comment" />
+            </form>
+          </div>
           <div class="subscribe-section">
             <div id="sub2">
               <h2>Subscribe here</h2>
@@ -129,8 +138,9 @@
     <div id="snackbarSubscribe">
       Thank you for your subscription! We will keep you updated!
     </div>
-    <script src="../js/api-call-blog-spesific.js"></script>
-    <script src="../js/hamburger-menu.js"></script>
+    <script src="./js/api-call-blog-spesific.js"></script>
+    <script src="./js/hamburger-menu.js"></script>
+    <script src="./js/comments.js"></script>
     <script
       src="https://kit.fontawesome.com/36dc22a110.js"
       crossorigin="anonymous"
