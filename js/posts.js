@@ -4,10 +4,10 @@ const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page
 numPost = 10;
 const getData = async (url) => {
   try {
-    // const containerDiv = document.querySelector(".container");
-    // const loader = document.getElementById("loader");
-    // containerDiv.style.display = "none";
-    // loader.style.display = "block";
+    const containerDiv = document.getElementById("container");
+    const loader = document.getElementById("loader");
+    containerDiv.style.display = "none";
+    loader.style.display = "block";
     const response = await fetch(url);
     const result = await response.json();
     fillData(result);
@@ -81,8 +81,8 @@ function insertPosts(response, num) {
 
   postContainer.innerHTML = html;
 
-  // const containerDiv = document.getElementById("container");
-  // const loader = document.getElementById("loader");
-  // containerDiv.style.display = "block";
-  // loader.style.display = "none";
+  const containerDiv = document.getElementById("container");
+  const loader = document.getElementById("loader");
+  containerDiv.style.display = "block";
+  loader.style.display = "none";
 }

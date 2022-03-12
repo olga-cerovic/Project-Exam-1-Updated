@@ -33,7 +33,7 @@ function fillData(response) {
       carousel += `<div class="slide">
     <div>
     <a href="127.0.0.1:5501/post-specific.html?id=${index}">
-      <img src="${elem.images[0].src}" alt="" />
+      <img class="carousel-img" src="${elem.images[0].src}" alt="" />
       <p>
         ${text}
       </p>
@@ -54,7 +54,7 @@ function fillData(response) {
   let html = "";
   const showcase = document.querySelector(".subscribe-section");
   html += `<img
-   src="${data[1].images[0].src}"
+   src="${response[1].images[0].src}"
    alt="Camping coffee equipment by lake"
   />
   <div id="sub2">
@@ -80,7 +80,7 @@ function fillData(response) {
 
   const middle = document.querySelector(".middle-section");
 
-  let middleImg = data[1].images[30].src;
+  let middleImg = response[1].images[30].src;
   let image = document.createElement("img");
 
   image.src = middleImg;

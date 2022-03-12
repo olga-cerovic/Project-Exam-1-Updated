@@ -37,3 +37,11 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.comment-section {
+  text-align: center;
+}
+
+#comment {
+  margin: 5px 0;
+}
