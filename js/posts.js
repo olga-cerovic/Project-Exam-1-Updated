@@ -2,7 +2,7 @@ const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page
 // data = [];
 
 numPost = 10;
-const getData = async (url) => {
+const getData = async (url, searchInputValue = null) => {
   try {
     const containerDiv = document.getElementById("container");
     const loader = document.getElementById("loader");
@@ -10,7 +10,14 @@ const getData = async (url) => {
     loader.style.display = "block";
     const response = await fetch(url);
     const result = await response.json();
-    fillData(result);
+    const filteredResults = searchInputValue
+      ? result.filter((product) =>
+          product.name.toLowerCase().includes(searchInputValue.toLowerCase())
+        )
+      : result;
+    console.log(filteredResults);
+    fillData(filteredResults);
+    console.log(result);
   } catch (error) {
     console.log(error);
   }
@@ -18,13 +25,23 @@ const getData = async (url) => {
 
 getData(url);
 
+const inputField = document.getElementById("inputField");
+const searchButton = document.getElementById("searchButton");
+
+searchButton.onclick = function searchPosts() {
+  getData(url, inputField.value);
+};
+
 function fillData(response) {
   // data = response;
 
   let html = "";
   let showcase = document.querySelector(".subscribe-section");
   html += `<img
-   src="${response[1].images[0].src}"
+   src="${
+     response[1]?.images[0].src ??
+     "https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
+   }"
    alt="Camping coffee equipment by lake"
   />
   <div id="sub2">
