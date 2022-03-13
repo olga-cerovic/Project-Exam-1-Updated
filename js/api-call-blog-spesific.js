@@ -62,12 +62,13 @@ function showPost(result) {
   let urlL = new URL(urlP);
 
   let search_param = urlL.searchParams;
-  let id = search_param.get("id");
+  let id = Number(search_param.get("id"));
 
   let html = "";
 
   result.forEach((element, index) => {
-    if (index == id) {
+    console.log(element.id, id);
+    if (element.id === id) {
       html += `<div class="main-photo">
     <img
       src="${element.images[0].src}"
