@@ -8,7 +8,6 @@ element.addEventListener("submit", (event) => {
 
 const postComment = () => {
   console.log("test");
-  // ACTION_URL = "https://your-wordpress-site.com/wp-json/wp/v2/comments"
 
   const commentValue = document.getElementById("comment").value;
 
@@ -41,8 +40,7 @@ const postComment = () => {
       return response.json();
     })
     .then((object) => {
-      // Comment submission failed.
-      // Output object.message to see the error message.
+
     })
     .catch((error) => console.error("Error:", error));
 };

@@ -1,5 +1,19 @@
 /*Posts-page*/
 
+.posts-page-main-content #inputField {
+  margin-left: 3.4vw;
+  margin-top: 2vh;
+  padding: 10px;
+}
+
+#searchButton {
+  padding: 12px 20px;
+  color: #fff;
+  background-color: #d58818;
+  border: none;
+  cursor: pointer;
+}
+
 .post-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

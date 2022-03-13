@@ -1,5 +1,5 @@
 const url = `https://olgacerovic.no/coffee-nomad/wp-json/wc/v3/products?per_page=20&consumer_key=ck_946c851fd99cd6bc49a12feed747722bb1ab2c69&consumer_secret=cs_ed72963b1ad013f799e0b23e53729cb1239429d3`;
-// data = [];
+data = [];
 
 numPost = 10;
 const getData = async (url, searchInputValue = null) => {
@@ -16,8 +16,11 @@ const getData = async (url, searchInputValue = null) => {
         )
       : result;
     console.log(filteredResults);
-    fillData(filteredResults);
+    searchInputValue && filteredResults
+      ? insertFilteredPost(filteredResults)
+      : fillData(result);
     console.log(result);
+    data = searchInputValue ? filteredResults : result;
   } catch (error) {
     console.log(error);
   }
@@ -38,10 +41,7 @@ function fillData(response) {
   let html = "";
   let showcase = document.querySelector(".subscribe-section");
   html += `<img
-   src="${
-     response[1]?.images[0].src ??
-     "https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
-   }"
+   src="${response[1].images[0].src}"
    alt="Camping coffee equipment by lake"
   />
   <div id="sub2">
@@ -74,7 +74,7 @@ var postContainer = document.querySelector(".post-list");
 const showMore = document.querySelector("#show-more");
 showMore.addEventListener("click", function () {
   numPost += 2;
-  insertPosts(response, numPost);
+  insertPosts(data, numPost);
 });
 
 function insertPosts(response, num) {
@@ -83,7 +83,7 @@ function insertPosts(response, num) {
   response.forEach((element, index) => {
     if (index >= 5 && index < 5 + num) {
       html += ` <div class="post-details">
-    <a href="http://127.0.0.1:5501//post-specific.html?id=${index}"> 
+    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${index}"> 
     <img
       src="${element.images[0].src}"
       alt="${element.name}"
@@ -94,6 +94,33 @@ function insertPosts(response, num) {
     </a>
   </div>`;
     }
+  });
+
+  postContainer.innerHTML = html;
+
+  const containerDiv = document.getElementById("container");
+  const loader = document.getElementById("loader");
+  containerDiv.style.display = "block";
+  loader.style.display = "none";
+}
+
+function insertFilteredPost(response) {
+  let html = "";
+
+  response.forEach((element, index) => {
+    console.log(element);
+
+    html += ` <div class="post-details">
+    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${index}"> 
+    <img
+      src="${element.images[0].src}"
+      alt="${element.name}"
+    />
+    <h2>
+    ${element.name}
+    </h2>
+    </a>
+  </div>`;
   });
 
   postContainer.innerHTML = html;
