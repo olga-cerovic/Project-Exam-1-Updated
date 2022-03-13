@@ -83,7 +83,7 @@ function insertPosts(response, num) {
   response.forEach((element, index) => {
     if (index >= 5 && index < 5 + num) {
       html += ` <div class="post-details">
-    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${index}"> 
+    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${element.id}"> 
     <img
       src="${element.images[0].src}"
       alt="${element.name}"
@@ -111,7 +111,7 @@ function insertFilteredPost(response) {
     console.log(element);
 
     html += ` <div class="post-details">
-    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${index}"> 
+    <a href="https://upbeat-darwin-d2da9a.netlify.app//post-specific.html?id=${element.id}"> 
     <img
       src="${element.images[0].src}"
       alt="${element.name}"
